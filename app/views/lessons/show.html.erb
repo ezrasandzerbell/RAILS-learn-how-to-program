@@ -6,10 +6,11 @@
   <ul>
     <% @lesson.chapters.each do |chapter| %>
       <li>
-        <p>(Week)</p> |
-        <%= chapter.name %> | <%= chapter.handson %>
-        <%= link_to "Edit", edit_lesson_chapter_path(@lesson, chapter) %> |
-        <%= link_to "Delete", lesson_chapter_path(@lesson, chapter), :data => {:confirm => "Are you sure?", :method => "delete"} %>
+        <p>(Day)<%= chapter.day %>
+          <%= chapter.name %> | <%= chapter.handson %>
+          <%= link_to "Edit", edit_lesson_chapter_path(@lesson, chapter) %> |
+          <%= link_to "Delete", lesson_chapter_path(@lesson, chapter), :data => {:confirm => "Are you sure?", :method => "delete"} %>
+        </p>
       </li>
     <% end %>
   </ul>

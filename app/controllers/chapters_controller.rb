@@ -45,6 +45,6 @@ end
 
 private
   def chapter_params
-    params.require(:chapter).permit(:name, :week)
+    params.require(:chapter).permit(:name, :day, :handson, :content)
   end
 end
