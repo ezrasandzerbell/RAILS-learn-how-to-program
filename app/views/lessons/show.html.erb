@@ -1,0 +1,21 @@
+<h1><%= @lesson.name %></h1>
+
+<% if @lesson.chapters.any? %>
+  <h4>Here are the chapters for this lesson:</h4>
+
+  <ul>
+    <% @lesson.chapters.each do |chapter| %>
+      <li>
+        <p>(Week)</p> |
+        <%= chapter.name %> | <%= chapter.handson %>
+        <%= link_to "Edit", edit_lesson_chapter_path(@lesson, chapter) %> |
+        <%= link_to "Delete", lesson_chapter_path(@lesson, chapter), :data => {:confirm => "Are you sure?", :method => "delete"} %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no chapters yet!</p>
+<% end %>
+
+<p><%= link_to "Add a Chapter", new_lesson_chapter_path(@lesson) %></p>
+<p><%= link_to "Delete Lesson", lesson_path(@lesson), :data => {:confirm => "are you sure?", :method => "delete"} %> </p>

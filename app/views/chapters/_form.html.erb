@@ -1,0 +1,13 @@
+<%= render "layouts/errors", :object => @chapter %>
+
+<%= form_for [@lesson, @chapter] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :day %>
+  <%= f.text_field :day %>
+  <%= f.label :handson, "Hands On" %>
+  <%= f.check_box :handson %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <%= f.submit %>
+<% end %>

@@ -12,6 +12,7 @@ class CreateLessons < ActiveRecord::Migration[5.0]
       t.column :handson, :boolean
       t.column :content, :string
       t.column :lesson_id, :integer
+      
       t.timestamps
     end
 
