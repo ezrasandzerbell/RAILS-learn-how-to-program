@@ -1,0 +1,23 @@
+<h1><%= @course.name %></h1>
+
+<% if @course.lessons.any? %>
+  <h4>Here are the lessons for this course:</h4>
+
+  <ul>
+    <% @course.lessons.each do |lesson| %>
+      <li>
+        <%= lesson.description %> |
+        <%= link_to "Edit", edit_course_lesson_path(@course, lesson) %> |
+        <%= link_to "Delete", course_lesson_path(@course, lesson), :data => {:confirm => "Are you sure?", :method => "delete"} %>
+        Done: <%= lesson.done %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no lessons yet!</p>
+<% end %>
+
+<p><%= link_to "Add a Lesson", new_course_lesson_path(@course) %></p>
+<p><%= link_to "Delete Course", course_path(@course), :data => {:confirm => "are you sure?", :method => "delete"} %> </p>
+
+<p><%= link_to "Return to courses", courses_path %></p>
