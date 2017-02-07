@@ -7,13 +7,25 @@
     <% @course.lessons.each do |lesson| %>
       <li>
         <p>(Week <%= lesson.week %>) <%= link_to lesson.name, course_lesson_path(@course, lesson) %>
-
-          <% lesson.chapters.each do |chapter| %>
-          <%= chapter.name %>
-          <% end %>
           <%= link_to "Edit", edit_course_lesson_path(@course, lesson) %> |
           <%= link_to "Delete", course_lesson_path(@course, lesson), :data => {:confirm => "Are you sure?", :method => "delete"} %>
         </p>
+          <% if lesson.chapters.any? %>
+          <ul>
+            <% lesson.chapters.each do |chapter| %>
+              <li>
+                <p>
+                  <%= chapter.handson %> | (Day)<%= chapter.day %> | <%= link_to chapter.name, lesson_chapter_path(lesson, chapter)%> |
+                  <%= link_to "Edit", edit_lesson_chapter_path(lesson, chapter) %> |
+                  <%= link_to "Delete", lesson_chapter_path(lesson, chapter), :data => {:confirm => "Are you sure?", :method => "delete"} %>
+                </p>
+              </li>
+            <% end %>
+          </ul>
+          <% else %>
+            <p>There are no chapters yet!</p>
+          <% end %>
+          <br>
       </li>
     <% end %>
   </ul>
