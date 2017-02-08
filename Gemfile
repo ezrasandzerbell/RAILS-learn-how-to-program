@@ -17,6 +17,7 @@ group :development, :test do
   gem 'pry'
   gem 'shoulda-matchers'
   gem 'capybara'
+  gem 'bootstrap-sass', '~> 3.3.6'
 end
 
 group :development do

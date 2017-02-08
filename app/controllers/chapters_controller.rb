@@ -2,6 +2,9 @@ class ChaptersController < ApplicationController
 
   def show
     @chapter = Chapter.find(params[:id])
+    @chapters = @chapter.lesson.chapters
+    @prevChapter = @chapter.id - 1
+    @nextChapter = @chapter.id + 1
     render :show
   end
 

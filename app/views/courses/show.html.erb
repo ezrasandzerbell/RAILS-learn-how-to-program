@@ -1,3 +1,7 @@
+
+
+<% content_for(:name, @course.name) %>
+
 <h1><%= @course.name %></h1>
 
 <% if @course.lessons.any? %>
@@ -12,10 +16,13 @@
         </p>
           <% if lesson.chapters.any? %>
           <ul>
-            <% lesson.chapters.each do |chapter| %>
+            <% lesson.chapters.order(:day).each do |chapter|
+              days = ["Weekend", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+              day = days[chapter.day.to_i]
+            %>
               <li>
                 <p>
-                  <%= chapter.handson %> | (Day)<%= chapter.day %> | <%= link_to chapter.name, lesson_chapter_path(lesson, chapter)%> |
+                  <%= chapter.handson %> | <%= day %> | <%= link_to chapter.name, lesson_chapter_path(lesson, chapter)%> |
                   <%= link_to "Edit", edit_lesson_chapter_path(lesson, chapter) %> |
                   <%= link_to "Delete", lesson_chapter_path(lesson, chapter), :data => {:confirm => "Are you sure?", :method => "delete"} %>
                 </p>

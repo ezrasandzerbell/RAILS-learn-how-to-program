@@ -1,3 +1,15 @@
+<% content_for(:navbar) do %>
+
+  <% if @chapters.find_by("id": @prevChapter) %>
+    <li><a href="/lessons/<%= @chapter.lesson.id %>/chapters/<%= @prevChapter %>">Previous</a></li>
+  <% end %>
+  <% if @chapters.find_by("id": @nextChapter) %>
+    <li><a href="/lessons/<%= @chapter.lesson.id %>/chapters/<%= @nextChapter %>">Next</a></li>
+  <% end %>
+<% end %>
+
+<% content_for(:name, "Learn How To Program") %>
+
 <%= @chapter.name %>
 <br><br>
-<%= @chapter.content %>
+<%= @chapter.content.html_safe %>
