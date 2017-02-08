@@ -12,7 +12,15 @@
        %>
       <li>
         <p>
-          <%= chapter.handson %> | <%= day %> | <%= link_to chapter.name, lesson_chapter_path(@lesson, chapter)%> |
+
+          <% if chapter.handson === false %>
+            <span class="glyphicon glyphicon-book"></span>
+          <% elsif chapter.handson === true %>
+            <span class="glyphicon glyphicon-pencil"></span>
+          <% end %>
+
+
+          | <%= day %> | <%= link_to chapter.name, lesson_chapter_path(@lesson, chapter)%> |
           <%= link_to "Edit", edit_lesson_chapter_path(@lesson, chapter) %> |
           <%= link_to "Delete", lesson_chapter_path(@lesson, chapter), :data => {:confirm => "Are you sure?", :method => "delete"} %>
         </p>

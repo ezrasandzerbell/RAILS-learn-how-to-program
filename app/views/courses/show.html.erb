@@ -10,19 +10,26 @@
   <ul>
     <% @course.lessons.each do |lesson| %>
       <li>
-        <p>(Week <%= lesson.week %>) <%= link_to lesson.name, course_lesson_path(@course, lesson) %>
+        <span class="weekSpan">(Week <%= lesson.week %>) <%= link_to lesson.name, course_lesson_path(@course, lesson) %>
           <%= link_to "Edit", edit_course_lesson_path(@course, lesson) %> |
           <%= link_to "Delete", course_lesson_path(@course, lesson), :data => {:confirm => "Are you sure?", :method => "delete"} %>
-        </p>
+        </span>
+        <br><br>
           <% if lesson.chapters.any? %>
-          <ul>
+          <ul class="container">
             <% lesson.chapters.order(:day).each do |chapter|
               days = ["Weekend", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
               day = days[chapter.day.to_i]
             %>
               <li>
                 <p>
-                  <%= chapter.handson %> | <%= day %> | <%= link_to chapter.name, lesson_chapter_path(lesson, chapter)%> |
+                  <% if chapter.handson === false %>
+                    <span class="glyphicon glyphicon-book"></span>
+                  <% elsif chapter.handson === true %>
+                    <span class="glyphicon glyphicon-pencil"></span>
+                  <% end %>
+
+                  | <%= day %> | <%= link_to chapter.name, lesson_chapter_path(lesson, chapter)%> |
                   <%= link_to "Edit", edit_lesson_chapter_path(lesson, chapter) %> |
                   <%= link_to "Delete", lesson_chapter_path(lesson, chapter), :data => {:confirm => "Are you sure?", :method => "delete"} %>
                 </p>
