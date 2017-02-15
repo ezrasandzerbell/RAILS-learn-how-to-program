@@ -1,6 +1,6 @@
 # _Learn How To Program Clone_
 
-#### _An imitation of the learn how to program website (www.learnhowtoprogram.com) with most functionality in place_
+#### _An imitation of the learn how to program website (www.learnhowtoprogram.com) with most functionality in place._
 
 #### By _**Ezra Sandzer-Bell**_
 
