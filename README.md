@@ -14,7 +14,7 @@ Configuration:
 * $ postgres
 * $ Rails db:create
 * $ Rails db:migrate
-* $ Rails db:test:prepaer
+* $ Rails db:test:prepare
 * $ Rails serve
 * $ rspec
 
