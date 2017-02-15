@@ -6,21 +6,17 @@
 
 ## Description
 
-_This app allows users to navigate through archived educational material._
+_This app allows users to navigate through archived educational material. Built with Ruby on Rails (5.0.1)_
 
-* Rails 5.0.1
 
 * Configuration
 
-_$ postgres_
-_$ Rails db:create_
-_$ Rails db:migrate_
-_$ Rails db:test:prepaer_
-_$ Rails serve_
-
-* How to run the test suite
-
-_$ rspec_
+* $ postgres
+* $ Rails db:create
+* $ Rails db:migrate
+* $ Rails db:test:prepaer
+* $ Rails serve
+* $ rspec
 
 ## Technologies Used
 
