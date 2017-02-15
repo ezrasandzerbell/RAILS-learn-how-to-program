@@ -9,7 +9,7 @@
 _This app allows users to navigate through archived educational material. Built with Ruby on Rails (5.0.1)_
 
 
-* Configuration
+Configuration:
 
 * $ postgres
 * $ Rails db:create
