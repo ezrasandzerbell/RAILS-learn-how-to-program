@@ -1,9 +1,12 @@
-# README
+# _Learn How To Program Clone_
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### _An imitation of the learn how to program website (www.learnhowtoprogram.com) with most functionality in place_
 
-Things you may want to cover:
+#### By _**Ezra Sandzer-Bell**_
+
+## Description
+
+_This app allows users to navigate through archived educational material._
 
 * Rails 5.0.1
 
