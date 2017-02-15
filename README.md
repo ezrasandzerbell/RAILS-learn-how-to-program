@@ -5,20 +5,26 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
+* Rails 5.0.1
 
 * Configuration
 
-* Database creation
-
-* Database initialization
+_$ postgres_
+_$ Rails db:create_
+_$ Rails db:migrate_
+_$ Rails db:test:prepaer_
+_$ Rails serve_
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+_$ rspec_
 
-* Deployment instructions
+## Technologies Used
 
-* ...
+_This site was built with Ruby, Rails, ActiveRecord, Postgres, Rspec, Capybara, HTML, and CSS._
+
+### License
+
+*Open Source*
+
+Copyright (c) 2016 **_Ezra Sandzer-Bell_**
